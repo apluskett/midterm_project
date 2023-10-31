@@ -5,18 +5,21 @@ public class PCPartPickerDriver
 
     public static void main(String[] args)
     {
-        PCBuilder pcBuilder = new PCBuilder();
+        CPU cpu = new CPU();
+        Case caseClass = new Case();
         int form, caseSwitch, cpuBrand, cpuSpeed, auxMemory, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupply, motherBoard, motherBoardType;
         boolean exit = true;
 
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
          do
          {
-            form = twoChoices("Please select an option: \n1.Laptop \n2.Desktop");
+            form = twoChoices("Please select an option: \n1.Laptop \n2.Desktop \n");
 
             switch (form) {
                 case 1:
-                    pcBuilder.PCBuilder();
+                   //PCBuilder pcBuilder = new PCBuilder();
+                   caseSwitch = fourChoices(caseClass.caseOutput());
+
                     break;
                 case 2:
                     break;
@@ -97,7 +100,7 @@ public class PCPartPickerDriver
             }
             else if (exitValid.equals("N"))
             {
-                System.out.print("\nThank you for using this program, have a great day!\n");
+                System.out.print("Thank you for using this program, have a great day!\n");
                 return false; // Do not run again
             }
             else

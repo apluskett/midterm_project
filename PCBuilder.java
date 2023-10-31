@@ -3,27 +3,30 @@ public class PCBuilder {
 
     public PCBuilder()
     {
-        System.out.print("\nWhich size case would you like? \n1.Mini ITX \n2.Mini Tower \n3.Mid Tower \n4.Full Tower");
+
     }
 
     public PCBuilder(int caseSwitch)
     {
-
+        this.caseSwitch = caseSwitch;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand)
     {
-
+        this(caseSwitch);
+        this.cpuBrand = cpuBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed)
     {
-
+        this(caseSwitch, cpuBrand);
+        this.cpuSpeed = cpuSpeed;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed);
+        this.motherBoardBrand = motherBoardBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType)
