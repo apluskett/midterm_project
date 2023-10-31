@@ -5,16 +5,18 @@ public class PCPartPickerDriver
 
     public static void main(String[] args)
     {
+        PCBuilder pcBuilder = new PCBuilder();
         int form, caseSwitch, cpuBrand, cpuSpeed, auxMemory, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupply, motherBoard, motherBoardType;
         boolean exit = true;
 
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
          do
          {
-            form = twoChoices("Please select an option: \n1.Laptop \n2. Desktop");
+            form = twoChoices("Please select an option: \n1.Laptop \n2.Desktop");
 
             switch (form) {
                 case 1:
+                    pcBuilder.PCBuilder();
                     break;
                 case 2:
                     break;
@@ -82,20 +84,27 @@ public class PCPartPickerDriver
         }
     }
 
-        private static boolean exitProgram() {
-            while (true) {
-                System.out.print("Would you like to run again? (Y/N): ");
-                String exitValid = scanner.next().toUpperCase(); // Convert to uppercase for case-insensitive check
+    private static boolean exitProgram()
+    {
+        while (true)
+        {
+            System.out.print("Would you like to run again? (Y/N): ");
+            String exitValid = scanner.next().toUpperCase(); // Convert to uppercase for case-insensitive check
 
-                if (exitValid.equals("Y")) {
-                    return true; // Run again
-                } else if (exitValid.equals("N")) {
-                    System.out.print("\nThank you for using this program, have a great day!\n");
-                    return false; // Do not run again
-                } else {
-                    System.out.print("Invalid input. Please enter 'Y' or 'N'.\n");
-                }
+            if (exitValid.equals("Y"))
+            {
+                return true; // Run again
+            }
+            else if (exitValid.equals("N"))
+            {
+                System.out.print("\nThank you for using this program, have a great day!\n");
+                return false; // Do not run again
+            }
+            else
+            {
+                System.out.print("Invalid input. Please enter 'Y' or 'N'.\n");
             }
         }
     }
+
 }
