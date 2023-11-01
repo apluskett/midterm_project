@@ -31,71 +31,83 @@ public class PCBuilder {
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand);
+        this.motherBoardType = motherBoardType;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType);
+        this.ramBrand = ramBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand, int ramSize)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand);
+        this.ramSize = ramSize;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand, int ramSize, int auxMemoryBrand)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize);
+        this.auxMemoryBrand = auxMemoryBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand, int ramSize, int auxMemoryBrand, int auxMemorySize)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand);
+        this.auxMemorySize = auxMemorySize;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand, int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize);
+        this.powerSupply = powerSupply;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand, int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply, int monitorBrand)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize, powerSupply);
+        this.monitorBrand = monitorBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand,
                      int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply, int monitorBrand, int monitorSize)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize, powerSupply, monitorBrand);
+        this.monitorSize = monitorSize;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand,
                      int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply, int monitorBrand, int monitorSize,
                      int keyboardBrand)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize, powerSupply, monitorBrand, monitorSize);
+        this.keyboardBrand = keyboardBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand,
                      int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply, int monitorBrand, int monitorSize,
                      int keyboardBrand, int keyboardType)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize, powerSupply, monitorBrand, monitorSize, keyboardBrand);
+        this.keyboardType = keyboardType;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand,
                      int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply, int monitorBrand, int monitorSize,
                      int keyboardBrand, int keyboardType, int mouseBrand)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize, powerSupply, monitorBrand, monitorSize, keyboardBrand, keyboardType);
+        this.mouseBrand = mouseBrand;
     }
 
     public PCBuilder(int caseSwitch, int cpuBrand, int cpuSpeed, int motherBoardBrand, int motherBoardType, int ramBrand,
                      int ramSize, int auxMemoryBrand, int auxMemorySize, int powerSupply, int monitorBrand, int monitorSize,
                      int keyboardBrand, int keyboardType, int mouseBrand, int mouseType)
     {
-
+        this(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand, auxMemorySize, powerSupply, monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand);
+        this.mouseType = mouseType;
     }
 
 }

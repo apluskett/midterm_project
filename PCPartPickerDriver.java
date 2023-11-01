@@ -5,9 +5,14 @@ public class PCPartPickerDriver
 
     public static void main(String[] args)
     {
+        PCBuilder pcBuilder = new PCBuilder();
+        LaptopBuilder laptopBuilder = new LaptopBuilder();
         CPU cpu = new CPU();
         Case caseClass = new Case();
-        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemory, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupply, motherBoard, motherBoardType;
+        Motherboard mobo = new Motherboard();
+        RAM ram = new RAM();
+
+        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupply, motherBoardBrand, motherBoardType, ramBrand, ramSize;
         boolean exit = true;
 
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
@@ -17,8 +22,23 @@ public class PCPartPickerDriver
 
             switch (form) {
                 case 1:
-                   //PCBuilder pcBuilder = new PCBuilder();
                    caseSwitch = fourChoices(caseClass.caseOutput());
+                   pcBuilder = new PCBuilder(caseSwitch);
+                   cpuBrand = twoChoices(cpu.cpuBOut());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand);
+                   cpuSpeed = fourChoices(cpu.cpuSOut());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed);
+                   motherBoardBrand = fourChoices(mobo.moboBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand);
+                   motherBoardType = fourChoices(mobo.moboType());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType);
+                   ramBrand = fourChoices(ram.ramBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand);
+                   ramSize = fourChoices(ram.ramSize());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize);
+
+
+
 
                     break;
                 case 2:
@@ -109,5 +129,4 @@ public class PCPartPickerDriver
             }
         }
     }
-
 }
