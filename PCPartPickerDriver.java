@@ -11,8 +11,13 @@ public class PCPartPickerDriver
         Case caseClass = new Case();
         Motherboard mobo = new Motherboard();
         RAM ram = new RAM();
+        Memory mem = new Memory();
+        PowerSupply powSub = new PowerSupply();
+        Monitor mon = new Monitor();
+        Keyboard key = new Keyboard();
+        Mouse mouse = new Mouse();
 
-        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupply, motherBoardBrand, motherBoardType, ramBrand, ramSize;
+        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSize;
         boolean exit = true;
 
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
@@ -36,10 +41,26 @@ public class PCPartPickerDriver
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand);
                    ramSize = fourChoices(ram.ramSize());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize);
-
-
-
-
+                   auxMemoryBrand = fourChoices(mem.auxMemBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand);
+                   auxMemorySize = fourChoices(mem.auxMemSize());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize);
+                   powerSupplyBrand = fourChoices(powSub.powSupBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand);
+                   powerSupplySize = fourChoices(powSub.powSupSize());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize);
+                   monitorBrand = fourChoices(mon.monBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand);
+                   monitorSize = fourChoices(mon.monSize());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize);
+                   keyboardBrand = fourChoices(key.keyboBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand);
+                   keyboardType = fourChoices(key.keyboType());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType);
+                   mouseBrand = fourChoices(mouse.mouseBrand());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand);
+                   mouseType = fourChoices(mouse.mouseType());
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType);
                     break;
                 case 2:
                     break;
