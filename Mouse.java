@@ -111,12 +111,12 @@ public class Mouse
         }
     }
 
-    public Double getMonitorPrice()
+    public Double getMousePrice()
     {
         return mousePrice;
     }
 
-    public String getMonitorModel()
+    public String getMouseModel()
     {
         return mouseModel;
     }
