@@ -9,7 +9,7 @@ public class PCBuilder {
     Keyboard key = new Keyboard();
     Mouse mouse = new Mouse();
     GPU gpu = new GPU();
-
+    Receipt invoice = new Receipt();
 
     int caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand,
             keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType,
@@ -121,6 +121,11 @@ public class PCBuilder {
 
     public Mouse getMouse() {
         return mouse;
+    }
+
+    public Receipt getInvoice()
+    {
+        return invoice;
     }
 
     // Similar getters for other components...

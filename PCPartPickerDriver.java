@@ -4,19 +4,7 @@ public class PCPartPickerDriver
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args)
     {
-         PCBuilder pcBuilder = null;
-         LaptopBuilder laptopBuilder = new LaptopBuilder();
-         CPU cpu = new CPU();
-         Case caseClass = new Case();
-         Motherboard mobo = new Motherboard();
-         RAM ram = new RAM();
-         Memory mem = new Memory();
-         PowerSupply powSup = new PowerSupply();
-         Monitor mon = new Monitor();
-         Keyboard key = new Keyboard();
-         Mouse mouse = new Mouse();
-         GPU gpu = new GPU();
-         Receipt invoice = new Receipt();
+        PCBuilder pcBuilder = new PCBuilder();
         int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSize, gpuBrand, gpuSize;
         double calculateTotalPrice;
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
@@ -26,33 +14,33 @@ public class PCPartPickerDriver
 
             switch (form) {
                 case 1:
-                   caseSwitch = fourChoices(caseClass.caseOutput());
-                   cpuBrand = twoChoices(cpu.cpuBOut());
-                   cpuSpeed = fourChoices(cpu.cpuSOut());
-                   motherBoardBrand = fourChoices(mobo.moboBrand());
-                   motherBoardType = fourChoices(mobo.moboType());
-                   gpuBrand = fourChoices(gpu.gpuBrand());
-                   gpuSize = fourChoices(gpu.gpuSize());
-                   ramBrand = fourChoices(ram.ramBrand());
-                   ramSize = fourChoices(ram.ramSize());
-                   auxMemoryBrand = fourChoices(mem.auxMemBrand());
-                   auxMemorySize = fourChoices(mem.auxMemSize());
-                   powerSupplyBrand = fourChoices(powSup.powSupBrand());
-                   powerSupplySize = fourChoices(powSup.powSupSize());
-                   monitorBrand = fourChoices(mon.monBrand());
-                   monitorSize = fourChoices(mon.monSize());
-                   keyboardBrand = fourChoices(key.keyboBrand());
-                   keyboardType = fourChoices(key.keyboType());
-                   mouseBrand = fourChoices(mouse.mouseBrand());
-                   mouseType = fourChoices(mouse.mouseType());
-                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize);
+                   caseSwitch = fourChoices(pcBuilder.getCaseClass().caseOutput());
+                   cpuBrand = twoChoices(pcBuilder.getCpu().cpuBOut());
+                   cpuSpeed = fourChoices(pcBuilder.getCpu().cpuSOut());
+                   motherBoardBrand = fourChoices(pcBuilder.getMobo().moboBrand());
+                   motherBoardType = fourChoices(pcBuilder.getMobo().moboType());
+                   gpuBrand = fourChoices(pcBuilder.getGpu().gpuBrand());
+                   gpuSize = fourChoices(pcBuilder.getGpu().gpuSize());
+                   ramBrand = fourChoices(pcBuilder.getRam().ramBrand());
+                   ramSize = fourChoices(pcBuilder.getRam().ramSize());
+                   auxMemoryBrand = fourChoices(pcBuilder.getMem().auxMemBrand());
+                   auxMemorySize = fourChoices(pcBuilder.getMem().auxMemSize());
+                   powerSupplyBrand = fourChoices(pcBuilder.getPowSup().powSupBrand());
+                   powerSupplySize = fourChoices(pcBuilder.getPowSup().powSupSize());
+                   monitorBrand = fourChoices(pcBuilder.getMon().monBrand());
+                   monitorSize = fourChoices(pcBuilder.getMon().monSize());
+                   keyboardBrand = fourChoices(pcBuilder.getKey().keyboBrand());
+                   keyboardType = fourChoices(pcBuilder.getKey().keyboType());
+                   mouseBrand = fourChoices(pcBuilder.getMouse().mouseBrand());
+                   mouseType = fourChoices(pcBuilder.getMouse().mouseType());
+                   pcBuilder = new  PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize);
                    pcBuilder.sendSetters();
                    break;
                 case 2:
                     break;
             }
              if (pcBuilder != null) {
-                 invoice.printReceiptDT(pcBuilder);
+                 pcBuilder.getInvoice().printReceiptDT(pcBuilder);
              }
 
          }while(exitProgram());
@@ -140,36 +128,4 @@ public class PCPartPickerDriver
             }
         }
     }
-
-    /*private static void printReceiptDT() {
-        System.out.println("----- Receipt -----");
-        System.out.println("Case: " + caseClass.getSize() + ", Price: " + caseClass.getPrice());
-        System.out.println("CPU: " + cpu.getCpuModel() + ", Price: " + cpu.getCpuPrice());
-        System.out.println("GPU: " + gpu.getGpuModel() + ", Price: " + gpu.getGpuPrice());
-        System.out.println("Motherboard: " + mobo.getmoboModel() + ", Price: " + mobo.getmoboPrice());
-        System.out.println("PowerSupply: " + powSup.getPowModel() + ", Price: " + powSup.getPowPrice());
-        System.out.println("RAM: " + ram.getRamModel() + ", Price: " + ram.getRamPrice());
-        System.out.println("Storage: " + mem.getMemModel() + ", Price: " + mem.getMemPrice());
-        System.out.println("Monitor: " + mon.getMonitorModel() + ", Price: " + mon.getMonitorPrice());
-        System.out.println("Mouse: " + mouse.getMouseModel() + ", Price: " + mouse.getMousePrice());
-        System.out.println("Keyboard: " + key.getKeyboardModel() + ", Price: " + key.getKeyboardPrice());
-        System.out.println("Total Price: " + calculateTotalPrice());
-        System.out.println("-------------------");
-    }
-
-    private static double calculateTotalPrice() {
-        // Calculate the total price based on the components
-        double totalPrice = 0;
-        totalPrice += caseClass.getPrice();
-        totalPrice += cpu.getCpuPrice();
-        totalPrice += gpu.getGpuPrice();
-        totalPrice += mobo.getmoboPrice();
-        totalPrice += powSup.getPowPrice();
-        totalPrice += ram.getRamPrice();
-        totalPrice += mem.getMemPrice();
-        totalPrice += mon.getMonitorPrice();
-        totalPrice += mouse.getMousePrice();
-        totalPrice += key.getKeyboardPrice();
-        return totalPrice;
-    }*/
 }
