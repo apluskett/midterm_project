@@ -24,7 +24,7 @@ public class PCPartPickerDriver
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
          do
          {
-            form = twoChoices("Please select an option: \n1.Desktop \n2.Laptop");
+            form = twoChoices("Please select an option: \n1.Desktop \n2.Laptop \n");
 
             switch (form) {
                 case 1:

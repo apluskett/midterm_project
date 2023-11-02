@@ -10,7 +10,7 @@ public class CPU
     }
     public String cpuSOut()
     {
-        return "How fast do you want your CPU to be? \n1. 1GHz \n2. 2GHz \n3. 3GHz \n4. 4GHz \n";
+        return "How fast do you want your CPU to be? \n1.1GHz +$50\n2.2GHz +$100\n3.3GHz +$150\n4.4GHz +$200\n";
     }
     public void setBrandAndSpeed(int brand, int speed) {
         this.cpuBrand = brand;
@@ -24,19 +24,19 @@ public class CPU
                 switch (cpuSpeed) {
                     case 1: // 1GHz CPU
                         cpuModel = "Intel 1GHz CPU ";
-                        cpuPrice = 200.00;
+                        cpuPrice = 150.00;
                         break;
                     case 2://2GHz CPU
                         cpuModel = "Intel 2GHz CPU ";
-                        cpuPrice = 250.00;
+                        cpuPrice = 200.00;
                         break;
                     case 3://3GHz CPU
                         cpuModel = "Intel 3GHz CPU ";
-                        cpuPrice = 300.00;
+                        cpuPrice = 250.00;
                         break;
                     case 4://4GHz CPU
                         cpuModel = "Intel 4GHz CPU ";
-                        cpuPrice = 350.00;
+                        cpuPrice = 300;
                         break;
                 }
                 break;
@@ -48,15 +48,15 @@ public class CPU
                         break;
                     case 2://2GHz CPU
                         cpuModel = "AMD 2GHz CPU ";
-                        cpuPrice = 230.00;
+                        cpuPrice = 150.00;
                         break;
                     case 3://3GHz CPU
                         cpuModel = "AMD 3GHz CPU ";
-                        cpuPrice = 280.00;
+                        cpuPrice = 200.00;
                         break;
                     case 4://4GHz CPU
                         cpuModel = "AMD 4GHz CPU ";
-                        cpuPrice = 330.00;
+                        cpuPrice = 250.00;
                         break;
                 }
                 break;
