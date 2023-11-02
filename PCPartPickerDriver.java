@@ -12,12 +12,13 @@ public class PCPartPickerDriver
         Motherboard mobo = new Motherboard();
         RAM ram = new RAM();
         Memory mem = new Memory();
-        PowerSupply powSub = new PowerSupply();
+        PowerSupply powSup = new PowerSupply();
         Monitor mon = new Monitor();
         Keyboard key = new Keyboard();
         Mouse mouse = new Mouse();
+        GPU gpu = new GPU();
 
-        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSize;
+        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSize, gpuBrand, gpuSize;
         boolean exit = true;
 
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
@@ -36,6 +37,8 @@ public class PCPartPickerDriver
                    motherBoardBrand = fourChoices(mobo.moboBrand());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand);
                    motherBoardType = fourChoices(mobo.moboType());
+                   gpuBrand = fourChoices(gpu.gpuBrand());
+                   gpuSize = fourChoices(gpu.gpuSize());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType);
                    ramBrand = fourChoices(ram.ramBrand());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand);
@@ -45,9 +48,9 @@ public class PCPartPickerDriver
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand);
                    auxMemorySize = fourChoices(mem.auxMemSize());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize);
-                   powerSupplyBrand = fourChoices(powSub.powSupBrand());
+                   powerSupplyBrand = fourChoices(powSup.powSupBrand());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand);
-                   powerSupplySize = fourChoices(powSub.powSupSize());
+                   powerSupplySize = fourChoices(powSup.powSupSize());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize);
                    monitorBrand = fourChoices(mon.monBrand());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand);
@@ -61,10 +64,15 @@ public class PCPartPickerDriver
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand);
                    mouseType = fourChoices(mouse.mouseType());
                    pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType);
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand);
+                   pcBuilder = new PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize);
                     break;
                 case 2:
                     break;
             }
+            System.out.print( caseClass.getSize() + caseClass.getPrice() + cpu.getCpuModel() + cpu.getCpuPrice() + mobo.getmoboModel() + mobo.getmoboPrice() + ram.getRamModel() + ram.getRamPrice()
+            + mem.getMemModel() + mem.getMemPrice() + powSup.getPowModel() + powSup.getPowPrice() + mon.getMonitorModel() + mon.getMonitorPrice() + key.getKeyboardModel() + key.getKeyboardPrice()
+            + mouse.getMonitorModel() + mouse.getMonitorPrice() + gpu.getGpuModel() + gpu.getGpuPrice());
         }while(exitProgram());
     }
 
