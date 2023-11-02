@@ -17,9 +17,7 @@ public class PCPartPickerDriver
         Keyboard key = new Keyboard();
         Mouse mouse = new Mouse();
         GPU gpu = new GPU();
-        Receipt invoice = new Receipt();
         int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSize, gpuBrand, gpuSize;
-        boolean exit = true;
 
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
          do
@@ -54,7 +52,8 @@ public class PCPartPickerDriver
                     break;
             }
              if (pcBuilder != null) {
-                 invoice.printReceiptDT(pcBuilder); // Pass pcBuilder as a parameter
+                 Receipt invoice = new Receipt();
+                 invoice.printReceiptDT();
              }
 
          }while(exitProgram());

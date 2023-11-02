@@ -1,28 +1,14 @@
-public class Receipt public class Receipt {
-    CPU cpu;
-    Case caseClass;
-    Motherboard mobo;
-    RAM ram;
-    Memory mem;
-    PowerSupply powSup;
-    Monitor mon;
-    Keyboard key;
-    Mouse mouse;
-    GPU gpu;
-
-    public Receipt(CPU cpu, Case caseClass, Motherboard mobo, RAM ram, Memory mem, PowerSupply powSup, Monitor mon, Keyboard key, Mouse mouse, GPU gpu) {
-        this.cpu = cpu;
-        this.caseClass = caseClass;
-        this.mobo = mobo;
-        this.ram = ram;
-        this.mem = mem;
-        this.powSup = powSup;
-        this.mon = mon;
-        this.key = key;
-        this.mouse = mouse;
-        this.gpu = gpu;
-    }
-
+public class Receipt {
+    CPU cpu = new CPU();
+    Case caseClass = new Case();
+    Motherboard mobo = new Motherboard();
+    RAM ram = new RAM();
+    Memory mem = new Memory();
+    PowerSupply powSup = new PowerSupply();
+    Monitor mon = new Monitor();
+    Keyboard key = new Keyboard();
+    Mouse mouse = new Mouse();
+    GPU gpu = new GPU();
     public void printReceiptDT() {
         System.out.println("----- Receipt -----");
         System.out.println("Case: " + caseClass.getSize() + ", Price: " + caseClass.getPrice());
