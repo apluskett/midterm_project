@@ -74,4 +74,55 @@ public class PCBuilder {
         // Set properties for the CPU
         cpu.setBrandAndSpeed(cpuBrand, cpuSpeed);
     }
+
+    public CPU getCpu() {
+        return cpu;
+    }
+
+    public GPU getGpu()
+        {
+        return gpu;
+    }
+
+    public Case getCaseClass()
+    {
+        return caseClass;
+    }
+
+    public Monitor getMon()
+    {
+        return mon;
+    }
+
+    public Motherboard getMobo()
+    {
+        return mobo;
+    }
+
+    public Keyboard getKey()
+    {
+        return key;
+    }
+
+    public PowerSupply getPowSup()
+    {
+        return powSup;
+    }
+
+    public RAM getRam()
+    {
+        return ram;
+    }
+
+    public Memory getMem()
+    {
+        return mem;
+    }
+
+    public Mouse getMouse() {
+        return mouse;
+    }
+
+    // Similar getters for other components...
+
 }
