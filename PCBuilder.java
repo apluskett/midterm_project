@@ -11,7 +11,7 @@ public class PCBuilder {
     GPU gpu = new GPU();
     Receipt invoice = new Receipt();
 
-    int caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand,
+    int caseSwitch, lapSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand,
             keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType,
             ramBrand, ramSpeed, gpuBrand, gpuSize;
 
@@ -43,7 +43,22 @@ public class PCBuilder {
         this.gpuBrand = gpuBrand;
         this.gpuSize = gpuSize;
     }
-    public void sendSetters() {
+    public PCBuilder(int lapSwitch,int cpuBrand,int cpuSpeed,int motherBoardBrand,int motherBoardType,int gpuBrand,int gpuSize,int ramBrand,int ramSpeed,int auxMemoryBrand,int auxMemorySize)
+    {
+        this.lapSwitch = lapSwitch;
+        this.cpuBrand = cpuBrand;
+        this.cpuSpeed = cpuSpeed;
+        this.motherBoardBrand = motherBoardBrand;
+        this.motherBoardType = motherBoardType;
+        this.ramBrand = ramBrand;
+        this.ramSpeed = ramSpeed;
+        this.auxMemoryBrand = auxMemoryBrand;
+        this.auxMemorySize = auxMemorySize;
+        this.gpuBrand = gpuBrand;
+        this.gpuSize = gpuSize;
+
+    }
+    public void sendSettersDesktop() {
         // Set properties for the case
         caseClass.setSwitch(caseSwitch);
 
@@ -72,6 +87,16 @@ public class PCBuilder {
         mobo.setBrandAndType(motherBoardBrand, motherBoardType);
 
         // Set properties for the CPU
+        cpu.setBrandAndSpeed(cpuBrand, cpuSpeed);
+    }
+
+    public void sendSettersLaptop()
+    {
+        caseClass.setLapSwitch(lapSwitch);
+        gpu.setBrandAndSize(gpuBrand, gpuSize);
+        ram.setBrandAndSpeed(ramBrand, ramSpeed);
+        mem.setBrandAndSize(auxMemoryBrand, auxMemorySize);
+        mobo.setBrandAndType(motherBoardBrand, motherBoardType);
         cpu.setBrandAndSpeed(cpuBrand, cpuSpeed);
     }
 

@@ -5,8 +5,7 @@ public class PCPartPickerDriver
     public static void main(String[] args)
     {
         PCBuilder pcBuilder = new PCBuilder();
-        int form, caseSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSize, gpuBrand, gpuSize;
-        double calculateTotalPrice;
+        int form, caseSwitch, lapSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSpeed, gpuBrand, gpuSize;
         System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
          do
          {
@@ -22,7 +21,7 @@ public class PCPartPickerDriver
                    gpuBrand = fourChoices(pcBuilder.getGpu().gpuBrand());
                    gpuSize = fourChoices(pcBuilder.getGpu().gpuSize());
                    ramBrand = fourChoices(pcBuilder.getRam().ramBrand());
-                   ramSize = fourChoices(pcBuilder.getRam().ramSize());
+                   ramSpeed = fourChoices(pcBuilder.getRam().ramSize());
                    auxMemoryBrand = fourChoices(pcBuilder.getMem().auxMemBrand());
                    auxMemorySize = fourChoices(pcBuilder.getMem().auxMemSize());
                    powerSupplyBrand = fourChoices(pcBuilder.getPowSup().powSupBrand());
@@ -33,14 +32,38 @@ public class PCPartPickerDriver
                    keyboardType = fourChoices(pcBuilder.getKey().keyboType());
                    mouseBrand = fourChoices(pcBuilder.getMouse().mouseBrand());
                    mouseType = fourChoices(pcBuilder.getMouse().mouseType());
-                   pcBuilder = new  PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSize, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize);
-                   pcBuilder.sendSetters();
+                   pcBuilder = new  PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSpeed, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize);
+                   pcBuilder.sendSettersDesktop();
                    break;
                 case 2:
+                    lapSwitch = fourChoices(pcBuilder.getCaseClass().lapOutput());
+                    cpuBrand = twoChoices(pcBuilder.getCpu().cpuBOut());
+                    cpuSpeed = fourChoices(pcBuilder.getCpu().cpuSOut());
+                    motherBoardBrand = fourChoices(pcBuilder.getMobo().moboBrand());
+                    motherBoardType = fourChoices(pcBuilder.getMobo().moboType());
+                    gpuBrand = fourChoices(pcBuilder.getGpu().gpuBrand());
+                    gpuSize = fourChoices(pcBuilder.getGpu().gpuSize());
+                    ramBrand = fourChoices(pcBuilder.getRam().ramBrand());
+                    ramSpeed = fourChoices(pcBuilder.getRam().ramSize());
+                    auxMemoryBrand = fourChoices(pcBuilder.getMem().auxMemBrand());
+                    auxMemorySize = fourChoices(pcBuilder.getMem().auxMemSize());
+                    pcBuilder = new PCBuilder(lapSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, gpuBrand,gpuSize,ramBrand, ramSpeed,auxMemoryBrand,auxMemorySize);
+                    pcBuilder.sendSettersLaptop();
                     break;
             }
              if (pcBuilder != null) {
-                 pcBuilder.getInvoice().printReceiptDT(pcBuilder);
+                 if (form == 1)
+                 {
+                     pcBuilder.getInvoice().printReceiptDT(pcBuilder);
+                 }
+                 else if (form == 2)
+                 {
+                     pcBuilder.getInvoice().printReceiptLT(pcBuilder);
+                 }
+                 else
+                 {
+                     System.out.println("There is no receipt to be printed.");
+                 }
              }
 
          }while(exitProgram());
