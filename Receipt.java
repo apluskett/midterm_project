@@ -54,5 +54,6 @@ public class Receipt {
         totalPrice += pcBuilder.getRam().getRamPrice();
         totalPrice += pcBuilder.getMem().getMemPrice();
         return totalPrice;
+        //1
     }
 }
