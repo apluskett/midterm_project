@@ -6,12 +6,12 @@ public class Motherboard
     private double moboPrice;
     public String moboBrand()
     {
-        return "Which motherboard brand do you want? \n1.ASUS +$50\n2.MSI +$100\n3.ASRock +$150\n4.Gigabyte +$200";
+        return "Which motherboard brand do you want? \n1.ASUS +$50\n2.MSI +$100\n3.ASRock +$150\n4.Gigabyte +$200\n";
     }
 
     public String moboType()
     {
-        return "Which type of motherboard do you want? \n1.WIFI +$50\n2.Ethernet +$70\n3.Gaming +$100\n4.Work station +$200";
+        return "Which type of motherboard do you want? \n1.WIFI +$50\n2.Ethernet +$70\n3.Gaming +$100\n4.Work station +$200\n";
     }
 
     public void setBrandAndType(int brand, int type) {

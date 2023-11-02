@@ -6,12 +6,12 @@ public class Mouse
     private double mousePrice;
     public String mouseBrand()
     {
-        return "Which brand of mouse do you want? \n1.Logitech +$10\n2.Razer +$20\n3.Red Dragon +$30\n4.Odin Gaming +40$";
+        return "Which brand of mouse do you want? \n1.Logitech +$10\n2.Razer +$20\n3.Red Dragon +$30\n4.Odin Gaming +40$\n";
     }
 
     public String mouseType()
     {
-        return "Which type of mouse do you want? \n1.Gaming +$100\n2.Ergonomic +$50\n3.Silent +$30\n4.Multiple buttons +$150";
+        return "Which type of mouse do you want? \n1.Gaming +$100\n2.Ergonomic +$50\n3.Silent +$30\n4.Multiple buttons +$150\n";
 
     }
 

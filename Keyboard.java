@@ -5,11 +5,11 @@ public class Keyboard {
     private double keyboardPrice;
 
     public String keyboBrand() {
-        return "Which brand of keyboard do you want? \n1.Logitech +$20\n2.Razer +$40\n3.Red Dragon +$60\n4.Odin Gaming +80$";
+        return "Which brand of keyboard do you want? \n1.Logitech +$20\n2.Razer +$40\n3.Red Dragon +$60\n4.Odin Gaming +80$\n";
     }
 
     public String keyboType() {
-        return "Which type of keyboard do you want? \n1.Mechanical +$80\n2.Silent +$60\n3.Membrane +$40\n4.Ergonomic +$100";
+        return "Which type of keyboard do you want? \n1.Mechanical +$80\n2.Silent +$60\n3.Membrane +$40\n4.Ergonomic +$100\n";
     }
 
     public void setBrandAndType(int brand, int type) {

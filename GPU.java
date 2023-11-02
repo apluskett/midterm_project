@@ -5,12 +5,12 @@ public class GPU {
     private double gpuPrice;
     public String gpuBrand()
     {
-        return "Which GPU brand would you like? \n1.Nvidia +$100.00 \n2.AMD +$200.00\n3.Asus +$300\n4.EVGA +$400";
+        return "Which GPU brand would you like? \n1.Nvidia +$100.00 \n2.AMD +$200.00\n3.Asus +$300\n4.EVGA +$400\n";
     }
 
     public String gpuSize()
     {
-        return "Which GPU size would you like? \n1.6Gb +$200\n2.8Gb +$300\n3.12Gb +$600\n4.24Gb +$1400";
+        return "Which GPU size would you like? \n1.6Gb +$200\n2.8Gb +$300\n3.12Gb +$600\n4.24Gb +$1400\n";
     }
 
     public void setBrandAndSize(int brand, int size) {

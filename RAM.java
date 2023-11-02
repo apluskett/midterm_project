@@ -6,12 +6,12 @@ public class RAM
     private double ramPrice;
     public String ramBrand()
     {
-        return "Which brand of RAM do you want? \n1.G.Skill +$100\n2.Corsair +$80\n3.HYPERX +$60\n4.Kingston +$40";
+        return "Which brand of RAM do you want? \n1.G.Skill +$100\n2.Corsair +$80\n3.HYPERX +$60\n4.Kingston +$40\n";
     }
 
     public String ramSize()
     {
-        return "Which speed or RAM do you want? \n1.3000MT/s +$100\n2.3200MT/s +$150\n3.3600MT/s +$200\n4.4000MT/s +$250";
+        return "Which speed or RAM do you want? \n1.3000MT/s +$100\n2.3200MT/s +$150\n3.3600MT/s +$200\n4.4000MT/s +$250\n";
     }
 
     public void setBrandAndSpeed(int brand, int speed) {
