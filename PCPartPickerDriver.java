@@ -6,10 +6,12 @@ public class PCPartPickerDriver
     {
         PCBuilder pcBuilder = new PCBuilder();
         int form, caseSwitch, lapSwitch, cpuBrand, cpuSpeed, auxMemoryBrand, auxMemorySize, monitorBrand, monitorSize, keyboardBrand, keyboardType,mouseBrand, mouseType, powerSupplyBrand, powerSupplySize, motherBoardBrand, motherBoardType, ramBrand, ramSpeed, gpuBrand, gpuSize;
-        System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!");
+        String name;
+        System.out.print("Thank you for choosing Alex's geek and tech shop to build your PC!\n");
          do
          {
-            form = twoChoices("Please select an option: \n1.Desktop \n2.Laptop \n");
+            name = getName("What will the name be for the this order?\n");
+             form = twoChoices("Please select an option: \n1.Desktop \n2.Laptop \n");
 
             switch (form) {
                 case 1:
@@ -32,7 +34,7 @@ public class PCPartPickerDriver
                    keyboardType = fourChoices(pcBuilder.getKey().keyboType());
                    mouseBrand = fourChoices(pcBuilder.getMouse().mouseBrand());
                    mouseType = fourChoices(pcBuilder.getMouse().mouseType());
-                   pcBuilder = new  PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSpeed, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize);
+                   pcBuilder = new  PCBuilder(caseSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, ramBrand, ramSpeed, auxMemoryBrand,auxMemorySize, powerSupplyBrand, powerSupplySize,monitorBrand, monitorSize, keyboardBrand, keyboardType, mouseBrand, mouseType, gpuBrand, gpuSize, name);
                    pcBuilder.sendSettersDesktop();
                    break;
                 case 2:
@@ -47,7 +49,7 @@ public class PCPartPickerDriver
                     ramSpeed = fourChoices(pcBuilder.getRam().ramSize());
                     auxMemoryBrand = fourChoices(pcBuilder.getMem().auxMemBrand());
                     auxMemorySize = fourChoices(pcBuilder.getMem().auxMemSize());
-                    pcBuilder = new PCBuilder(lapSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, gpuBrand,gpuSize,ramBrand, ramSpeed,auxMemoryBrand,auxMemorySize);
+                    pcBuilder = new PCBuilder(lapSwitch, cpuBrand, cpuSpeed, motherBoardBrand, motherBoardType, gpuBrand,gpuSize,ramBrand, ramSpeed,auxMemoryBrand,auxMemorySize, name);
                     pcBuilder.sendSettersLaptop();
                     break;
             }
@@ -148,6 +150,22 @@ public class PCPartPickerDriver
             else
             {
                 System.out.print("Invalid input. Please enter 'Y' or 'N'.\n");
+            }
+        }
+    }
+
+    private static String getName(String prompt) {
+        while (true) {
+            System.out.print(prompt);
+
+            String name = scanner.nextLine().trim(); // Read the input and trim whitespace
+
+            // Regex to check if the name contains only letters and possibly spaces
+            if (name.matches("[a-zA-Z ]+") && name.length() >= 2) {
+                // Name is valid, contains only letters (and spaces)
+                return name;
+            } else {
+                System.out.print("Invalid input. Please enter a name with only letters.\n");
             }
         }
     }

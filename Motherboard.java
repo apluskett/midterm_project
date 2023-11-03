@@ -105,12 +105,12 @@ public class Motherboard
         }
     }
 
-    public double getmoboPrice()
+    public double getMoboPrice()
     {
         return moboPrice;
     }
 
-    public String getmoboModel()
+    public String getMoboModel()
     {
         return moboModel;
     }
